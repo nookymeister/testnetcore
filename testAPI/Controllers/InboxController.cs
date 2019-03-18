@@ -61,19 +61,21 @@ namespace testAPI.Controllers
         
         // POST: api/Inbox
         [HttpPost]
-        public void Post([FromBody] InboxViewModels model)
+        public ActionResult Post([FromBody] InboxViewModels model)
         {
+            return Ok(model);
         }
 
         // PUT: api/Inbox/5
         [HttpPut]
-        public void Put([FromBody]InboxViewModels model)
+        public ActionResult Put([FromBody]InboxViewModels model)
         {
+            return Ok(model);
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete]
-        public void Delete(int id)
+        public void Delete(int docId)
         {
         }
     }
