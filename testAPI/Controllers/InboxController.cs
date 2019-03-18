@@ -61,6 +61,7 @@ namespace testAPI.Controllers
         
         // POST: api/Inbox
         [HttpPost]
+        [Route("GetPost")]
         public ActionResult Post([FromBody] InboxViewModels model)
         {
             return Ok(model);
@@ -68,6 +69,7 @@ namespace testAPI.Controllers
 
         // PUT: api/Inbox/5
         [HttpPut]
+        [Route("GetPut")]
         public ActionResult Put([FromBody]InboxViewModels model)
         {
             return Ok(model);
@@ -75,6 +77,7 @@ namespace testAPI.Controllers
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete]
+        [Route("GetDelete")]
         public void Delete(int docId)
         {
         }
