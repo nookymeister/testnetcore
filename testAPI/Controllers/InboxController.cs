@@ -12,12 +12,12 @@ namespace testAPI.Controllers
     [ApiController]
     public class InboxController : ControllerBase
     {
-        // GET: api/Inbox
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+       // GET: api/Inbox
+       [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
 
         //// GET: api/Inbox/5
         //[HttpGet("{id}", Name = "Get")]
@@ -27,12 +27,38 @@ namespace testAPI.Controllers
         //}
 
         // GET: api/Inbox/
+
+
         [HttpGet]
-        public ActionResult Get([FromBody]InboxViewModels model)
+        [Route("GetList")]
+        public ActionResult GetList()
         {
-            return Ok(model);
+            var modelList = new List<InboxViewModels>
+            {
+                new InboxViewModels() { DocID = 1 , Date = "2019-03-15" },
+                new InboxViewModels() { DocID = 2 , Date = "2019-03-16" },
+                new InboxViewModels() { DocID = 3 , Date = "2019-03-17" },
+                new InboxViewModels() { DocID = 4 , Date = "2019-03-18" }
+        };
+            return Ok(modelList);
         }
 
+        [HttpGet]
+        [Route("GetDetail")]
+        public ActionResult GetDetail(int DocID)
+        {
+            var modelList = new List<InboxViewModels>
+            {
+                new InboxViewModels() { DocID = 1 , Date = "2019-03-15" },
+                new InboxViewModels() { DocID = 2 , Date = "2019-03-16" },
+                new InboxViewModels() { DocID = 3 , Date = "2019-03-17" },
+                new InboxViewModels() { DocID = 4 , Date = "2019-03-18" }
+            };
+            
+            return Ok(modelList);
+        }
+
+        
         // POST: api/Inbox
         [HttpPost]
         public void Post([FromBody] InboxViewModels model)

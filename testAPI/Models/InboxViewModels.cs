@@ -7,7 +7,7 @@ namespace testAPI.Models
 {
     public class InboxViewModels
     {
-        public string DocID { get; set; }
+        public int DocID { get; set; }
         public string Date { get; set; }
         public string Coproduct { get; set; }
         public string Applicant { get; set; }
