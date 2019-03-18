@@ -45,7 +45,7 @@ namespace testAPI.Controllers
 
         [HttpGet]
         [Route("GetDetail")]
-        public ActionResult GetDetail(int DocID)
+        public ActionResult GetDetail(int docID)
         {
             var modelList = new List<InboxViewModels>
             {
@@ -54,8 +54,8 @@ namespace testAPI.Controllers
                 new InboxViewModels() { DocID = 3 , Date = "2019-03-17" },
                 new InboxViewModels() { DocID = 4 , Date = "2019-03-18" }
             };
-            
-            return Ok(modelList);
+            var temp = modelList.FirstOrDefault(x => x.DocID == docID);
+            return Ok(temp);
         }
 
         
